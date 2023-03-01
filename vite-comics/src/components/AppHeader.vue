@@ -1,6 +1,18 @@
 <script>
 export default {
 
+  data() {
+    return {
+      menuItems: ['Characters', 'Comics', 'Movies', 'Tv', 'Games', 'Collectibles', 'Videos', 'Fans', 'News', 'Shop'],
+      indexCurrent: 1,
+    }
+  },
+
+  methods: {
+    changeMenuItem(index) {
+      this.indexCurrent = index;
+    }
+  }
 }
 </script>
 
@@ -10,16 +22,10 @@ export default {
       <img src="/images/dc-logo.png" alt="">
 
       <ul>
-        <li>Characters</li>
-        <li class="active">Comics</li>
-        <li>Movies</li>
-        <li>Tv</li>
-        <li>Games</li>
-        <li>Collectibles</li>
-        <li>Videos</li>
-        <li>Fans</li>
-        <li>New</li>
-        <li>Shop</li>
+        <li v-for="(item, i) in menuItems" :class="(i === indexCurrent) ? 'active' : ''" @click='changeMenuItem(i)'>
+
+          {{ item }}
+        </li>
       </ul>
     </div>
 
