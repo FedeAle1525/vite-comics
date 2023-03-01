@@ -59,13 +59,48 @@ export default {
         <!-- Fine Footer Menu -->
       </div>
     </div>
-    <!-- Fine Section -->
+    <!-- Fine Section Footer Menu -->
+
+    <section class="section-footer-credits">
+      <div class="container">
+        <div class="footer-credits">
+
+          <div class="button">
+            Sign-up now!
+          </div>
+
+          <div class="menu-icons">
+            <h3>Follow Us</h3>
+
+            <ul>
+              <li>
+                <img src="/images/footer-facebook.png" alt="">
+              </li>
+              <li>
+                <img src="/images/footer-twitter.png" alt="">
+              </li>
+              <li>
+                <img src="/images/footer-youtube.png" alt="">
+              </li>
+              <li>
+                <img src="/images/footer-pinterest.png" alt="">
+              </li>
+              <li>
+                <img src="/images/footer-periscope.png" alt="">
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
   </footer>
 </template>
 
 <style lang="scss" scoped>
 @use '../style/partials/variables' as *;
 
+// FOOTER-MENU
 .section-footer-menu {
   background-image: url('/images/footer-bg.jpg');
   padding: 30px 0;
@@ -92,5 +127,41 @@ export default {
     }
   }
 
+}
+
+// FOOTER CREDITS
+.section-footer-credits {
+  padding: 30px;
+  background-color: $bg-footer-credits;
+}
+
+.footer-credits {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .button {
+    color: white;
+    text-transform: uppercase;
+    border: 2px solid $color-activate-link;
+    padding: 0 10px;
+    line-height: 40px;
+  }
+
+  .menu-icons {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    h3 {
+      color: $color-activate-link;
+      text-transform: uppercase;
+    }
+
+    ul {
+      display: flex;
+      gap: 15px;
+    }
+  }
 }
 </style>
