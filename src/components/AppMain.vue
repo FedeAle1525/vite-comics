@@ -1,5 +1,12 @@
 <script>
+import CardComic from '../components/CardComic.vue';
+
 export default {
+
+  components: {
+    CardComic
+  },
+
   data() {
     return {
       comics: [
@@ -85,12 +92,14 @@ export default {
   <main>
     <div class="container">
       <div class="row">
-        <div class="col-6" v-for="comic in comics">
-          <div class="card">
-            <img :src="comic.thumb">
+        <div class="col-6" v-for="(comic, i) in comics" :key="i">
+          <!-- <div class="card">
+              <img :src="comic.thumb">
 
-            <span>{{ comic.series }}</span>
-          </div>
+              <span>{{ comic.series }}</span>
+            </div> -->
+
+          <CardComic :thumb="comic.thumb" :series="comic.series" />
         </div>
       </div>
     </div>
