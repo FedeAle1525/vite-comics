@@ -1,6 +1,25 @@
 <script>
 export default {
 
+  data() {
+    return {
+      menus: [
+        {
+          title: 'Dc Comics',
+          items: ['Character', 'Comics', 'Movies', 'Tv', 'Games', 'Videos', 'News']
+        },
+        {
+          title: 'Dc',
+          items: ['Term of Use', 'Privacy Policy (New)', 'Ad Choise', 'Advertising', 'Job', 'Subscriptions', 'Talent Workshop',
+            'CPSC Certificates', 'Ratings', 'Shop Help', 'Contact Us']
+        },
+        {
+          title: 'Sites',
+          items: ['DC', 'MAD Magazine', 'DC Kids', 'DC Universe', 'DC Power Visa']
+        }
+      ]
+    }
+  }
 }
 </script>
 
@@ -11,47 +30,14 @@ export default {
       <div class="container">
         <!-- Inizio Footer Menu -->
         <div class="footer-menu">
-          <div class="menu-list">
-            <h3> Dc Comics</h3>
+
+          <div class="menu-list" v-for="(menu, i) in menus" :key="i">
+            <h3>{{ menu.title }}</h3>
 
             <ul>
-              <li>Characters</li>
-              <li>Comics</li>
-              <li>Movies</li>
-              <li>Tv</li>
-              <li>Games</li>
-              <li>Videos</li>
-              <li>News</li>
-            </ul>
-          </div>
-
-          <div class="menu-list">
-            <h3>Dc</h3>
-
-            <ul>
-              <li>Term of Use</li>
-              <li>Privacy Policy (New)</li>
-              <li>Ad Choise</li>
-              <li>Advertising</li>
-              <li>Job</li>
-              <li>Subscriptions</li>
-              <li>Talent Workshop</li>
-              <li>CPSC Certificates</li>
-              <li>Ratings</li>
-              <li>Shop Help</li>
-              <li>Contact Us</li>
-            </ul>
-          </div>
-
-          <div class="menu-list">
-            <h3>Sites</h3>
-
-            <ul>
-              <li>DC</li>
-              <li>MAD Magazine</li>
-              <li>DC Kids</li>
-              <li>DC Universe</li>
-              <li>DC Power Visa</li>
+              <li v-for="(item, j) in menu.items" :key="j">
+                {{ item }}
+              </li>
             </ul>
           </div>
 
