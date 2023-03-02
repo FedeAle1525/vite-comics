@@ -117,21 +117,6 @@ main {
     padding: 0 10px;
   }
 
-  .card {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
 
-    img {
-      aspect-ratio: 1/1;
-      object-fit: cover;
-      object-position: top;
-      display: block;
-    }
-
-    span {
-      text-transform: uppercase;
-    }
-  }
 }
 </style>
