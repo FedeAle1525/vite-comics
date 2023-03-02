@@ -22,9 +22,10 @@ export default {
       <img src="/images/dc-logo.png" alt="">
 
       <ul>
-        <li v-for="(item, i) in menuItems" :class="(i === indexCurrent) ? 'active' : ''" @click='changeMenuItem(i)'>
+        <li v-for="(item, i) in menuItems" :class="(i === indexCurrent) ? 'active' : ''">
 
           {{ item }}
+
         </li>
       </ul>
     </div>
